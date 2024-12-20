@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love</title>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Change to flex-start to allow natural stacking of elements */
+    min-height: 100vh; /* Ensure it covers the viewport */
+    overflow-y: auto; /* Enable scrolling */
+    position: relative;
+}
+
+h1, p {
+    text-align: center;
+    color: #ffffff;
+    z-index: 10; /* Ensure text is above hearts */
+    position: relative; /* Required for z-index to work */
+    margin: 20px; /* Add margin for better spacing */
+}
+
+.container {
+    display: none;
+    animation: fadeIn 2s ease forwards;
+    padding: 20px; /* Add padding for spacing */
+}
+
+.question-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px; /* Add margin for better spacing */
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.yes-button {
+    background: #4caf50;
+    color: white;
+}
+
+.no-button {
+    background: #f44336;
+    color: white;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+.hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1; /* Place hearts behind text */
+}
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .question-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .yes-button {
+            background: #4caf50;
+            color: white;
+        }
+
+        .no-button {
+            background: #f44336;
+            color: white;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        .hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1; /* Place hearts behind text */
+        }
+
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ff6b6b;
+            transform: rotate(45deg);
+            animation: floatUp 5s ease-in-out infinite;
+        }
+
+        .heart:before, .heart:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            border-radius: 50%;
+        }
+
+        .heart:before {
+            top: -50%;
+            left: 0;
+        }
+
+        .heart:after {
+            left: -50%;
+            top: 0;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(45deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-800px) rotate(45deg);
+                opacity: 0;
+            }
+        }
+
+        .emoji-heart {
+            position: absolute;
+            font-size: 2rem;
+            animation: burst 1s ease-out forwards;
+            z-index: 2; /* Ensure emoji hearts are above the background */
+        }
+
+        @keyframes burst {
+            0% {
+                transform: scale(1) translate(0, 0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2) translate(var(--x), var(--y));
+                opacity: 0;
+            }
+        }
+
+        .sad-emoji {
+            font-size: 3rem;
+            color: #ff6b6b;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="question-container" id="question-container">
+        <h1>Are you Sara?</h1>
+    </div>
+    
+    <div class="question-container" id="buttons-container">
+        <button class="yes-button" onclick="checkResponse('yes')">Yes</button>
+        <button class="no-button" onclick="checkResponse('no')">No</button>
+    </div>
+
+    <div class="container" id="message">
+        <h1>For My One and Only Sara💗</h1>
+        <p>
+            I just want you to know how incredibly special you are to me. You're the one 
+            I think about all day—the way you talk, the way you smile, and that beautiful laugh of yours,
+             they’re all absolutely perfect. 
+            Even the thought of you brightens my day and fills my heart with so much happiness
+        </p>
+        <p>
+            I hope you know just how much you mean to me. You’re not just someone I care about—you’re my whole world, my favorite person in the entire universe. You mean absolutely everything to me. The way you carry yourself with such grace, the way your eyes light up when you smile—it drives me absolutely crazy in the best way. And the warmth you bring into my life? It’s nothing short of magical. You’re my everything, my heart, my happiness, my pookie, my cute kitty, I just love you so much
+
+        </p>
+        <p>
+            With you by my side, life feels so perfect, like everything is exactly how it’s meant to be. You bring so much happiness, love, and warmth into my world, and I can’t thank you enough for that. You’re my shining star, the one who lights up my darkest days and makes everything better just by being you. I feel so lucky to have you in my life, and I don’t ever want to let you go. You’re my peace, my joy, and the reason I smile every single day.
+
+        </p>
+        <p>
+            You make my life feel so complete, like I finally found the piece I was missing all along. Every moment with you is special, and I can’t stop smiling just thinking about how lucky I am to have you. I love you, and I’ll love you till the end of time.
+
+        </p>
+    </div>
+
+    <div class="container" id="sad-message">
+        <h1 class="sad-emoji">😞</h1>
+        <p>Where is my princess?</p>
+    </div>
+
+    <div class="hearts" id="hearts"></div>
+
+    <script>
+        function checkResponse(response) {
+            if (response === 'yes') {
+                document.getElementById('buttons-container').style.display = 'none';
+                document.getElementById('question-container').style.display = 'none';
+                document.getElementById('message').style.display = 'block';
+                generateHearts();
+                heartExplosion();
+            } else if (response === 'no') {
+                document.getElementById('buttons-container').style.display = 'none';
+                document.getElementById('question-container').style.display = 'none';
+                document.getElementById('sad-message').style.display = 'block';
+            }
+        }
+
+        function generateHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            for (let i = 0; i < 35; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.style.left = `${Math.random() * 100}vw`;
+                heart.style.top = `${Math.random() * 100}vh`;
+                heart.style.animationDelay = `${Math.random() * 5}s`;
+                heart.style.width = heart.style.height = `${Math.random() * 20 + 10}px`;
+                heartsContainer.appendChild(heart);
+            }
+        }
+
+    </script>
+</body>
+</html>
